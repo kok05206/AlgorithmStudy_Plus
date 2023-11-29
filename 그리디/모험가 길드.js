@@ -1,3 +1,5 @@
+// 모험가 길드
+
 // readline 모듈을 불러옴
 const readline = require('readline');
 
