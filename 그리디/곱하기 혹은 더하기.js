@@ -5,19 +5,21 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-// 입력값을 받기 위한 배열
-let num = [];
+// 입력값
+let inputNum = '';
 
 // 사용자에게 값을 입력받음
-rl.question('여러 개의 숫자를 입력하시오 : ', (input) => {
-  // 입력값을 배열로 변환
-  num = input.split(' ').map(Number);
+rl.question('숫자를 입력하시오 : ', (input) => {
+  // 입력값을 문자열로 변환
+  inputNum = input;
+
+  let num = inputNum.split('').map(Number);
 
   // 결과 초기화
   let result = num[0];
 
   for (let i = 1; i < num.length; i++) {
-    // 0 또는 1이면 더한 값으로 갱신
+    // 0 또는 1이면 더한 값이 곱한 값보다 크기 때문에 더하기 연산 수행.
     if (num[i] <= 1 || result <= 1) {
       result += num[i];
     } else {
