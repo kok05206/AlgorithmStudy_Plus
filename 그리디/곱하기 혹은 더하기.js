@@ -1,3 +1,5 @@
+// 곱하기 혹은 더하기
+
 const readline = require('readline');
 // // readline을 사용하여 터미널에서 사용자 입력을 받기 위한 인터페이스 생성
 const rl = readline.createInterface({
