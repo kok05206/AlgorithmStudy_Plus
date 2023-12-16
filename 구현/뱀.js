@@ -78,12 +78,12 @@ rl.on('line', (input) => {
   } else if (!K) {
     K = parseInt(input); // 사과의 개수 입력
   } else if (appleLocations.length < K) {
-    // 사과 위치 정보를 읽습니다.
+    // 사과 위치 정보를 읽어온다.
     appleLocations.push(input.split(' ').map(Number));
   } else if (!L) {
     L = parseInt(input); // 방향 변환 횟수 입력.
   } else {
-    // 방향 변환 정보를 읽습니다.
+    // 방향 변환 정보를 읽어온다.
     if (turns.length < L) {
       turns.push(input.split(' ').map((v, i) => (i === 0 ? parseInt(v) : v)));
     }
