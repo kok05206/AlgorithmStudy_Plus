@@ -7,8 +7,8 @@ const input = fs.readFileSync(filePath).toString().trim().split('\n');
 const [N, M] = input[0].split(' ').map(Number); // 첫 번째 줄에서 N과 M을 입력받음
 const trees = input[1].split(' ').map(Number); // 두 번째 줄에서 각 나무의 높이를 입력받음
 
-// 이분 탐색을 위한 최소, 최대 값 설정
-let start = 1; // 나무의 최소 높이는 1로 설정
+// 최소, 최대 값 설정
+let start = 1; // 최소 높이는 1
 let end = Math.max(...trees); // 나무 중 가장 높은 나무의 높이를 최대 값으로 설정
 
 // 이분 탐색
