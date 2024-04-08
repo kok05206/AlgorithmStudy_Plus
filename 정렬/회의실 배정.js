@@ -1,4 +1,11 @@
-// 회의실 배정
+/**
+ * 회의실 배정
+ * 회의 시작 시간과 끝나는 시간을 선언.
+ * 회의가 끝나는 시간을 기준으로 정렬을 해준다. - line 17 ~ 19
+ * meetings 배열을 끝나는 시간(end)을 기준으로 오름차순으로 정렬 - line 22
+ * 만약 끝나는 시간이 같다면, 시작 시간(start)을 기준으로 오름차순으로 정렬 - line 22
+ */
+
 const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
@@ -10,13 +17,9 @@ const meetings = []; // 회의 정보
 for (let i = 1; i <= n; i++) {
   const [start, end] = input[i].trim().split(' ').map(Number);
   meetings.push({ start, end });
-  //회의 시작 시간, 끝나는 시간
 }
 
-// 회의가 끝나는 시간을 기준으로 정렬
 meetings.sort((a, b) => a.end - b.end || a.start - b.start);
-// meetings 배열을 끝나는 시간(end)을 기준으로 오름차순으로 정렬합니다.
-// 만약 끝나는 시간이 같다면, 시작 시간(start)을 기준으로 오름차순으로 정렬합니다.
 
 // 최대 회의 개수
 let count = 1;
